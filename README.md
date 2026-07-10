@@ -7,7 +7,7 @@
 
 <!-- ════════════════════════ HERO SECTION ════════════════════════ -->
 
-<img src="https://octodex.github.com/images/NUX_Octodex.gif" alt="Coding Octocat" width="350"/>
+<img src="./assets/developer.gif" alt="Coding Octocat" width="350"/>
 
 <br/>
 
