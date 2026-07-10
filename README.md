@@ -44,7 +44,6 @@ Location:   India
 - 🤖 &nbsp;Exploring **Generative AI** and **AI Agents**
 - 🌱 &nbsp;Currently learning **LLMs**, **RAG**, **LangChain**, and **MCP**
 - 💬 &nbsp;Ask me about **MERN Stack**, **REST APIs**, **DSA**, or **AI integrations**
-- ⚡ &nbsp;Fun fact: I debug with `console.log` and I'm not ashamed
 
 <br/>
 
@@ -211,24 +210,7 @@ Generates interview questions, evaluates responses, and provides personalized fe
 
 <br/>
 
-<!-- ════════════════════════ COMPETITIVE PROGRAMMING ════════════════════════ -->
 
-## 💻 &nbsp;Competitive Programming
-
-<p align="center">
-  <a href="https://leetcode.com/adiii637/">
-    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/>
-  </a>
-  &nbsp;
-  <a href="https://codeforces.com/profile/adiii637">
-    <img src="https://img.shields.io/badge/Codeforces-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codeforces"/>
-  </a>
-</p>
-
-- 📈 &nbsp;**LeetCode** — Actively practicing DSA, contest rating **1668**
-- 🏅 &nbsp;**Codeforces** — Pupil rank, regular contest participation
-- 📘 &nbsp;Following **Striver's A2Z DSA Sheet** for structured problem solving
-- 🎯 &nbsp;Focus areas: Arrays, Trees, Graphs, DP, Binary Search
 
 <br/>
 
@@ -277,7 +259,7 @@ Generates interview questions, evaluates responses, and provides personalized fe
   <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
 </a>
 &nbsp;
-<a href="mailto:adityaraj637@gmail.com">
+<a href="mailto:"adityarajyt675@gmail.com">
   <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
 </a>
 &nbsp;
@@ -285,17 +267,14 @@ Generates interview questions, evaluates responses, and provides personalized fe
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
 </a>
 &nbsp;
-<a href="https://leetcode.com/adiii637/">
+<a href="https://leetcode.com/u/_raj_18_/">
   <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/>
 </a>
 &nbsp;
 <a href="#">
   <img src="https://img.shields.io/badge/Portfolio-A78BFA?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio"/>
 </a>
-&nbsp;
-<a href="#">
-  <img src="https://img.shields.io/badge/Resume-4285F4?style=for-the-badge&logo=googledrive&logoColor=white" alt="Resume"/>
-</a>
+
 
 </div>
 
