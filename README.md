@@ -226,9 +226,9 @@ Generates interview questions, evaluates responses, and provides personalized fe
 <div align="center">
 
 <a href="https://github.com/adiii637">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=adiii637&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=A78BFA&text_color=C9D1D9&ring_color=A78BFA&count_private=true" alt="GitHub Stats"/>
+  <img height="180em" src="https://github-stats-extended.vercel.app/api?username=adiii637&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&icon_color=A78BFA&text_color=C9D1D9&ring_color=A78BFA&count_private=true&cache_bypass=1" alt="GitHub Stats"/>
   &nbsp;&nbsp;
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=adiii637&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&langs_count=8" alt="Top Languages"/>
+  <img height="180em" src="https://github-stats-extended.vercel.app/api/top-langs/?username=adiii637&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&langs_count=8&cache_bypass=1" alt="Top Languages"/>
 </a>
 
 <br/><br/>
