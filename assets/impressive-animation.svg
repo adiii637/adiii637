@@ -1,0 +1,317 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="50%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#070a10"/>
+    </linearGradient>
+    
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d946ef"/> <!-- Neon Pink -->
+      <stop offset="50%" stop-color="#a855f7"/> <!-- Purple -->
+      <stop offset="100%" stop-color="#6366f1"/> <!-- Indigo -->
+    </linearGradient>
+
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/> <!-- Cyan -->
+      <stop offset="100%" stop-color="#3b82f6"/> <!-- Blue -->
+    </linearGradient>
+
+    <radialGradient id="portalGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25"/>
+      <stop offset="70%" stop-color="#6366f1" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filters for Glow & Glassmorphism -->
+    <filter id="neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="intenseNeon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur1"/>
+      <feGaussianBlur stdDeviation="5" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glass" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(0.5deg); }
+    }
+    @keyframes rotateCW {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes rotateCCW {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(0.98); }
+      50% { opacity: 0.7; transform: scale(1.02); }
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -40; }
+    }
+    @keyframes codeScroll {
+      0%, 100% { transform: translateY(0); }
+      45% { transform: translateY(-60px); }
+      50% { transform: translateY(-60px); }
+      95% { transform: translateY(0); }
+    }
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes binaryFade {
+      0%, 100% { opacity: 0.1; }
+      50% { opacity: 0.6; }
+    }
+    @keyframes nodePulse {
+      0%, 100% { r: 3px; fill-opacity: 0.8; }
+      50% { r: 5px; fill-opacity: 1; }
+    }
+
+    /* Target classes */
+    .hero-container {
+      transform-origin: center;
+      animation: float 6s ease-in-out indefinite;
+    }
+    .portal-ring-1 {
+      transform-origin: 400px 225px;
+      animation: rotateCW 20s linear infinite;
+    }
+    .portal-ring-2 {
+      transform-origin: 400px 225px;
+      animation: rotateCCW 25s linear infinite;
+    }
+    .grid-lines {
+      stroke: #1e293b;
+      stroke-width: 0.5;
+      opacity: 0.3;
+    }
+    .terminal-code {
+      animation: codeScroll 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .cursor {
+      animation: cursorBlink 1s step-end infinite;
+    }
+    .glow-line {
+      stroke-dasharray: 8 12;
+      animation: dash 2s linear infinite;
+    }
+    .ambient-pulse {
+      animation: pulse 4s ease-in-out infinite;
+    }
+    .node {
+      animation: nodePulse 3s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="800" height="450" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Perspective Grid Lines -->
+  <g class="ambient-pulse" opacity="0.5">
+    <path d="M 0,400 L 800,400 M 0,350 L 800,350 M 0,300 L 800,300 M 0,250 L 800,250 M 0,200 L 800,200" stroke="#1e293b" stroke-width="0.5"/>
+    <path d="M 100,0 L 0,450 M 250,0 L 150,450 M 400,0 L 400,450 M 550,0 L 650,450 M 700,0 L 800,450" stroke="#1e293b" stroke-width="0.5"/>
+  </g>
+
+  <!-- AI Portal / Concentric Rings in Background -->
+  <circle cx="400" cy="225" r="180" fill="url(#portalGlow)" class="ambient-pulse"/>
+  
+  <circle cx="400" cy="225" r="150" fill="none" stroke="url(#primaryGlow)" stroke-width="1.5" stroke-opacity="0.3" stroke-dasharray="10 15" class="portal-ring-1"/>
+  <circle cx="400" cy="225" r="170" fill="none" stroke="url(#cyanGlow)" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="30 20" class="portal-ring-2"/>
+  <circle cx="400" cy="225" r="130" fill="none" stroke="#6366f1" stroke-width="0.75" stroke-opacity="0.4" stroke-dasharray="5 5" class="portal-ring-1"/>
+
+  <!-- Network Nodes & Connecting Laser Lines (AI Concept) -->
+  <g opacity="0.6">
+    <line x1="120" y1="120" x2="250" y2="180" stroke="url(#primaryGlow)" stroke-width="1" class="glow-line"/>
+    <line x1="680" y1="120" x2="550" y2="180" stroke="url(#cyanGlow)" stroke-width="1" class="glow-line"/>
+    <line x1="150" y1="320" x2="280" y2="280" stroke="url(#cyanGlow)" stroke-width="1" />
+    <line x1="650" y1="320" x2="520" y2="280" stroke="url(#primaryGlow)" stroke-width="1" />
+
+    <!-- Pulsing Node Circles -->
+    <circle cx="120" cy="120" r="4" fill="#d946ef" filter="url(#neon)" class="node"/>
+    <circle cx="680" cy="120" r="4" fill="#06b6d4" filter="url(#neon)" class="node"/>
+    <circle cx="150" cy="320" r="4" fill="#3b82f6" filter="url(#neon)" class="node"/>
+    <circle cx="650" cy="320" r="4" fill="#a855f7" filter="url(#neon)" class="node"/>
+  </g>
+
+  <!-- Binary Background Elements (Floating Code) -->
+  <g font-family="monospace" font-size="10" fill="#334155" opacity="0.25">
+    <text x="80" y="80" class="ambient-pulse" style="animation-delay: 0.5s;">01011001</text>
+    <text x="650" y="80" class="ambient-pulse" style="animation-delay: 1.2s;">11001010</text>
+    <text x="70" y="380" class="ambient-pulse" style="animation-delay: 0.8s;">01100111</text>
+    <text x="660" y="380" class="ambient-pulse" style="animation-delay: 2s;">10100101</text>
+    <text x="380" y="40" class="ambient-pulse" style="animation-delay: 1.5s;">&lt;AI_AGENT&gt;</text>
+  </g>
+
+  <!-- Main Floating Glassmorphic IDE (Laptop/Screen representation) -->
+  <g class="hero-container" style="animation: float 5s ease-in-out infinite;">
+    <!-- Ambient Shadow under the screen -->
+    <rect x="220" y="105" width="360" height="230" rx="12" fill="#000000" opacity="0.6" filter="url(#intenseNeon)"/>
+    
+    <!-- Outer Screen Frame -->
+    <rect x="210" y="95" width="380" height="245" rx="16" fill="#1e1b29" stroke="#3730a3" stroke-width="2" filter="url(#neon)"/>
+    
+    <!-- Inner Screen Display Area -->
+    <rect x="220" y="105" width="360" height="215" rx="10" fill="#090d16" stroke="#4c1d95" stroke-width="1"/>
+
+    <!-- Screen Glass Shine Reflection -->
+    <path d="M 220,105 L 450,105 L 220,320 Z" fill="#ffffff" fill-opacity="0.02" pointer-events="none"/>
+
+    <!-- IDE Header/Window Bar -->
+    <rect x="220" y="105" width="360" height="28" rx="10" fill="#0f172a" fill-opacity="0.8"/>
+    <!-- Window controls -->
+    <circle cx="240" cy="119" r="5" fill="#ef4444"/> <!-- Red -->
+    <circle cx="256" cy="119" r="5" fill="#f59e0b"/> <!-- Yellow -->
+    <circle cx="272" cy="119" r="5" fill="#10b981"/> <!-- Green -->
+    <!-- Window Title -->
+    <text x="400" y="123" font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle" font-weight="600">adityaraj.js</text>
+    <!-- IDE Tab icon -->
+    <rect x="535" y="112" width="35" height="14" rx="3" fill="#1e293b"/>
+    <text x="552" y="122" font-family="monospace" font-size="9" fill="#a855f7" text-anchor="middle">JS</text>
+
+    <!-- Coding Terminal Content -->
+    <g transform="translate(235, 150)">
+      <!-- Clip-path to prevent code overflowing terminal box -->
+      <clipPath id="terminalClip">
+        <rect x="0" y="0" width="330" height="155"/>
+      </clipPath>
+      
+      <g clip-path="url(#terminalClip)">
+        <!-- Animated Scrolling Code -->
+        <g class="terminal-code">
+          <!-- Line 1 -->
+          <text x="0" y="15" font-family="monospace" font-size="11" fill="#f43f5e" font-weight="bold">import</text>
+          <text x="50" y="15" font-family="monospace" font-size="11" fill="#f8fafc"> { AI_Agent, LLM } </text>
+          <text x="175" y="15" font-family="monospace" font-size="11" fill="#f43f5e" font-weight="bold">from</text>
+          <text x="210" y="15" font-family="monospace" font-size="11" fill="#10b981"> 'langchain';</text>
+
+          <!-- Line 2 -->
+          <text x="0" y="35" font-family="monospace" font-size="11" fill="#a855f7" font-weight="bold">class</text>
+          <text x="45" y="35" font-family="monospace" font-size="11" fill="#3b82f6" font-weight="bold">Developer</text>
+          <text x="115" y="35" font-family="monospace" font-size="11" fill="#f8fafc"> extends </text>
+          <text x="180" y="35" font-family="monospace" font-size="11" fill="#e2e8f0">Human {</text>
+
+          <!-- Line 3 -->
+          <text x="15" y="55" font-family="monospace" font-size="11" fill="#a855f7">constructor</text>
+          <text x="95" y="55" font-family="monospace" font-size="11" fill="#f8fafc">() {</text>
+
+          <!-- Line 4 -->
+          <text x="30" y="75" font-family="monospace" font-size="11" fill="#38bdf8">this</text>
+          <text x="60" y="75" font-family="monospace" font-size="11" fill="#f8fafc">.name = </text>
+          <text x="115" y="75" font-family="monospace" font-size="11" fill="#eab308">"Aditya Raj"</text>
+          <text x="200" y="75" font-family="monospace" font-size="11" fill="#f8fafc">;</text>
+
+          <!-- Line 5 -->
+          <text x="30" y="95" font-family="monospace" font-size="11" fill="#38bdf8">this</text>
+          <text x="60" y="95" font-family="monospace" font-size="11" fill="#f8fafc">.focus = </text>
+          <text x="120" y="95" font-family="monospace" font-size="11" fill="#eab308">["Backend", "AI_Agents"]</text>
+          <text x="280" y="95" font-family="monospace" font-size="11" fill="#f8fafc">;</text>
+
+          <!-- Line 6 -->
+          <text x="15" y="115" font-family="monospace" font-size="11" fill="#f8fafc">}</text>
+
+          <!-- Line 7 -->
+          <text x="15" y="135" font-family="monospace" font-size="11" fill="#3b82f6" font-weight="bold">async</text>
+          <text x="55" y="135" font-family="monospace" font-size="11" fill="#6366f1">deployAgent</text>
+          <text x="135" y="135" font-family="monospace" font-size="11" fill="#f8fafc">() {</text>
+
+          <!-- Line 8 -->
+          <text x="30" y="155" font-family="monospace" font-size="11" fill="#3b82f6" font-weight="bold">const</text>
+          <text x="70" y="155" font-family="monospace" font-size="11" fill="#f8fafc"> agent = </text>
+          <text x="125" y="155" font-family="monospace" font-size="11" fill="#3b82f6" font-weight="bold">new</text>
+          <text x="155" y="155" font-family="monospace" font-size="11" fill="#6366f1">AI_Agent</text>
+          <text x="210" y="155" font-family="monospace" font-size="11" fill="#f8fafc">();</text>
+
+          <!-- Line 9 -->
+          <text x="30" y="175" font-family="monospace" font-size="11" fill="#3b82f6" font-weight="bold">await</text>
+          <text x="70" y="175" font-family="monospace" font-size="11" fill="#f8fafc"> agent.runTask(</text>
+          <text x="175" y="175" font-family="monospace" font-size="11" fill="#eab308">"build_world"</text>
+          <text x="265" y="175" font-family="monospace" font-size="11" fill="#f8fafc">);</text>
+
+          <!-- Line 10 -->
+          <text x="15" y="195" font-family="monospace" font-size="11" fill="#f8fafc">}</text>
+
+          <!-- Line 11 -->
+          <text x="0" y="215" font-family="monospace" font-size="11" fill="#e2e8f0">}</text>
+        </g>
+        
+        <!-- Live Blinking Terminal Cursor -->
+        <rect x="180" y="278" width="6" height="12" fill="#d946ef" class="cursor"/>
+      </g>
+    </g>
+
+    <!-- Futuristic Laptop Base / Stand -->
+    <path d="M 320,340 L 480,340 L 510,360 L 290,360 Z" fill="#111827" stroke="#4f46e5" stroke-width="1.5" filter="url(#neon)"/>
+    <!-- Glowing light bar under the base -->
+    <line x1="310" y1="358" x2="490" y2="358" stroke="url(#cyanGlow)" stroke-width="3" filter="url(#intenseNeon)"/>
+  </g>
+
+  <!-- Futuristic Ambient Floating UI Cards / Badges around the screen -->
+  <!-- Card Left: NextJS -->
+  <g class="hero-container" style="animation: float 6s ease-in-out infinite; animation-delay: -1s;">
+    <rect x="75" y="195" width="100" height="40" rx="8" fill="#090d16" fill-opacity="0.8" stroke="#3b82f6" stroke-width="1" filter="url(#neon)"/>
+    <circle cx="95" cy="215" r="10" fill="#ffffff" fill-opacity="0.05"/>
+    <text x="95" y="218" font-family="monospace" font-size="9" fill="#3b82f6" text-anchor="middle" font-weight="bold">N</text>
+    <text x="115" y="214" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" fill="#f8fafc" font-weight="bold">Next.js</text>
+    <text x="115" y="224" font-family="'Segoe UI', Roboto, sans-serif" font-size="7" fill="#64748b">React Framework</text>
+  </g>
+
+  <!-- Card Right: Gemini/AI -->
+  <g class="hero-container" style="animation: float 5.5s ease-in-out infinite; animation-delay: -2.5s;">
+    <rect x="625" y="195" width="100" height="40" rx="8" fill="#090d16" fill-opacity="0.8" stroke="#d946ef" stroke-width="1" filter="url(#neon)"/>
+    <!-- Sparkle/AI icon -->
+    <path d="M 645,210 L 647,214 L 651,215 L 647,216 L 645,220 L 643,216 L 639,215 L 643,214 Z" fill="#d946ef" filter="url(#neon)"/>
+    <text x="660" y="214" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" fill="#f8fafc" font-weight="bold">Gemini</text>
+    <text x="660" y="224" font-family="'Segoe UI', Roboto, sans-serif" font-size="7" fill="#64748b">AI Engine</text>
+  </g>
+
+  <!-- Card Bottom-Right: Node.js -->
+  <g class="hero-container" style="animation: float 6.5s ease-in-out infinite; animation-delay: -0.5s;">
+    <rect x="580" y="300" width="90" height="35" rx="8" fill="#090d16" fill-opacity="0.8" stroke="#10b981" stroke-width="1" filter="url(#neon)"/>
+    <circle cx="598" cy="317" r="8" fill="#10b981" fill-opacity="0.1"/>
+    <!-- Node mini icon -->
+    <path d="M 598,313 L 602,315 L 602,319 L 598,321 L 594,319 L 594,315 Z" fill="#10b981"/>
+    <text x="612" y="316" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" fill="#f8fafc" font-weight="bold">Node.js</text>
+    <text x="612" y="324" font-family="'Segoe UI', Roboto, sans-serif" font-size="6" fill="#64748b">Backend</text>
+  </g>
+
+  <!-- Card Bottom-Left: MongoDB -->
+  <g class="hero-container" style="animation: float 5.8s ease-in-out infinite; animation-delay: -1.8s;">
+    <rect x="130" y="300" width="90" height="35" rx="8" fill="#090d16" fill-opacity="0.8" stroke="#10b981" stroke-width="1" filter="url(#neon)"/>
+    <circle cx="148" cy="317" r="8" fill="#10b981" fill-opacity="0.1"/>
+    <!-- Leaf mini icon -->
+    <path d="M 148,313 C 150,315 150,319 148,321 C 146,319 146,315 148,313 Z" fill="#10b981"/>
+    <text x="162" y="316" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" fill="#f8fafc" font-weight="bold">MongoDB</text>
+    <text x="162" y="324" font-family="'Segoe UI', Roboto, sans-serif" font-size="6" fill="#64748b">Database</text>
+  </g>
+
+  <!-- Decorative Sparkles and Glow Dots -->
+  <g class="ambient-pulse">
+    <circle cx="380" cy="70" r="2" fill="#ffffff" opacity="0.8"/>
+    <circle cx="480" cy="85" r="1.5" fill="#a855f7" opacity="0.6"/>
+    <circle cx="310" cy="90" r="1.5" fill="#06b6d4" opacity="0.6"/>
+    <circle cx="280" cy="380" r="2" fill="#ffffff" opacity="0.5"/>
+    <circle cx="530" cy="370" r="1.5" fill="#d946ef" opacity="0.5"/>
+  </g>
+
+</svg>

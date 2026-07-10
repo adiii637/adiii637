@@ -7,7 +7,7 @@
 
 <!-- ════════════════════════ HERO SECTION ════════════════════════ -->
 
-<img src="./assets/developer.gif" alt="Coding Octocat" width="350"/>
+<img src="./assets/impressive-animation.svg" alt="Coding Showcase" width="600"/>
 
 <br/>
 
